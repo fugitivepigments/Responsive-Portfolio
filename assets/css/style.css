@@ -16,7 +16,6 @@ body {
   width: 100%;
   max-width: 960px;
   margin: 0 auto;
-  clear: both;
 }
 
 h1,
@@ -53,10 +52,9 @@ h3 {
 /* header */
 
 #masthead {
-  position: fixed;
-  width:100%;
+  position: relative;
+  width: 100%;
   z-index: 99;
-  margin: 0 0 30px;
   overflow: auto;
   color: #fff;
   background: #fff;
@@ -64,9 +62,7 @@ h3 {
 }
 
 #logo {
-  float: left;
-  width: 325px;
-  height: 90px;
+  width: 100%;
   font-family: Georgia, Times, "Times New Roman", serif;
   font-size: 30px;
   font-weight: 700;
@@ -75,17 +71,18 @@ h3 {
   text-align: center;
   text-decoration: none;
   background: #4aaaa5;
+  display: block;
 }
 
 nav {
-  float: right;
-  margin-top: 25px;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
 }
 
 nav a {
   display: inline-block;
-  padding-left: 15px;
-  margin-left: 15px;
+  padding: 0 20px;
   line-height: 18px;
   color: #999;
   text-decoration: none;
@@ -94,6 +91,23 @@ nav a {
 
 nav a:first-child {
   border-left: 0 none;
+}
+
+@media screen and (min-width: 768px) {
+  #logo {
+    width: 300px;
+    float: left;
+    font-size: 27px;
+  }
+  nav {
+    width: 300px;
+    float: right;
+    align-items: center;
+    margin-top: 20px;
+  }
+  #masthead {
+    height: 90px;
+  }
 }
 
 /* footer */
@@ -112,10 +126,8 @@ footer {
 /* sidebar */
 
 .sidebar {
-  float: right;
-  max-width: 270px;
-  padding: 30px;
-  margin-bottom: 20px;
+  padding: 20px;
+  margin: 20px;
   background: #fff;
   border: 1px solid #ddd;
 }
@@ -139,18 +151,30 @@ h3,
   margin-right: 0;
 }
 
-/* main */
-
-#main-container {
-  padding-top: 130px;
+@media screen and (min-width: 768px) {
+  .sidebar {
+    margin-left: 10px;
+    float: right;
+  }
 }
 
+/* main */
+
+#main-container {}
+
 .main-section {
-  float: left;
-  width: 620px;
-  padding-bottom: 40px;
+  margin: 20px 20px;
+  padding: 20px;
   background: #fff;
   border: 1px solid #ddd;
+}
+
+@media screen and (min-width: 768px) {
+
+  .main-section {
+    float: left;
+    width: 60%;
+  }
 }
 
 /* portfolio page */
@@ -239,35 +263,13 @@ input[type=submit] {
   The width of the wrapper will be 1024px
   at browser widths above 768px
 */
+
 .wrapper {
   /* Box-model */
   width: 1024px;
 
   /* Positioning */
   margin: 40px auto;
-}
-
-#main-content,
-#sidebar {
-  /* Box-model */
-  width: 500px;
-  padding: 30px;
-}
-
-#main-content {
-  /* Positioning */
-  float: left;
-
-  /* Visual */
-  background: #fff;
-}
-
-#sidebar {
-  /* Positioning */
-  float: right;
-
-  /* Visual */
-  background: #eee;
 }
 
 @media screen and (max-width: 768px) {
@@ -294,6 +296,7 @@ input[type=submit] {
 /* Additional Screen Sizes */
 
 /* Width at 320px and below */
+
 @media screen and (max-width: 320px) {
   body {
     background-color: #333;
@@ -316,6 +319,7 @@ input[type=submit] {
 }
 
 /* Width at 168px and below */
+
 @media screen and (max-width: 168px) {
   body {
     background-color: #333;
